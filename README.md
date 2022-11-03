@@ -1,6 +1,6 @@
-# Welcome to Guess Who? Chris, Cris, or Kris Edition
+# You-Kbox: Your Personal Jukebox
 
-### Live Heroku 
+### Live Heroku App
 Check out the application [here!](https://you-kbox.herokuapp.com/#)
 
 ### Trello 
@@ -17,21 +17,20 @@ This application is my personal reiteration of streaming platforms like SoundClo
 * CSS
 * Bootstrap 4/5
 * MongoDB
-* NodeJs & Express
+* NodeJS & Express
 * Heroku
 * Spotify Web API
 * Postman
 
 ### Design Approach
 * **Ideation/Brainstorm:** The first step after deciding on my theme. Given my love for music, I figure I would create my own version, that would mimick the same user-flow: users can add songs, create playlists, and search music.
-* **Defining the Models &:** With a clear flow, I defined 3 models: user, song, and playlist. For each model, I defined the keys used and the data type (see ERD diagram below).
+* **Defining the Models:** With a clear flow, I defined 3 models: user, song, and playlist. For each model, I defined the keys used and the data type (see ERD diagram below).
 
     ![ERD](https://i.imgur.com/6aKRytK.png)
-  * **Players:** I decided on two players, and made one of the players the computer.
-  * **Character Amount:** I decided on having 24 Chris characters just like the real-life board-game.
-  * **Character Attributes:** Because there was a need to control the question input for the player,I decided to provide questions myself. To create the questions, I settled on four attributes: sex (male/female), ethnicity, hair-color, and profession.
-  * **Character List:** Based on the attributes, I began researching celebrities that were varied enough.
-* The second step involved creating quick wireframes for the look of the board and the flow. After the sketches were done, I proceeded to create the barebones HTML and CSS for the board.
-![wireframes](https://i.imgur.com/wBEJLWn.jpg)
+ 
+* **Low-Fidelity Prototype:** With the barebones all set, I proceeded to create a wireframe of the UI for the JSX views. For the sake of consistency, The same UI was used for both the /songs and /playlists routes. Belows are the images:
+![wireframes](https://i.imgur.com/NegCpjG.png)
+![wireframes](https://i.imgur.com/3ndvt0a.png)
+![wireframes](https://i.imgur.com/FZuxZOB.png)
 
-* Lastly, I began implementing the JS code for manipulating the DOM as well as adding CSS styling to make it more user friendly. This was an iterative step.
+* **Development:** For the coding process, I divided my work into small technical tasks as you would in an agile system. First, dependencies and boiler plate code was written to ensure that express and any of the modules installed ran properly. Then, I focused on creating all the INDUCES routes and their respective JSX views for the songs route. Using that same format, applied the same changes to the playlists route. Lastly, I began implementing the  code for manipulating the DOM as well as adding CSS styling to make it more user friendly. This was an iterative step.
