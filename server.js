@@ -116,11 +116,16 @@ app.use('/user', require('./controllers/authController'))
 //     res.send("YERRRRR IT'S WORKING")
 // })x
 
-app.listen(3004, ()=> {
-    console.log('Listening on port 3004')
+// app.listen(3004, ()=> {
+//     console.log('Listening on port 3004')
+// })
+
+
+
+const PORT = process.env.PORT || 8000
+
+// at the bottom
+app.listen(PORT, () => {
+  console.log('We in the building', PORT)
 })
-
-
-
-
 
