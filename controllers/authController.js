@@ -10,32 +10,30 @@ router.get('/signup', (req, res) => {
 })
 
 router.post('/signup', async (req, res) => {
-    // encrypt password
     req.body.password = await bcrypt.hash(
       req.body.password,
       await bcrypt.genSalt(10)
     )
-    // create the New user
+
     User.create(req.body)
       .then((user) => {
-        // redirect to login page
+ 
         res.redirect('/user/login')
       })
       .catch((error) => {
-        // send error as json
         console.log(error)
         res.json({ error })
       })
   })
 
 
-// The login Routes (Get => form, post => submit form)
+
 router.get('/login', (req, res) => {
   res.render('user/LogIn.jsx')
 })
 
 router.post('/login', async (req, res) => {
-    // get the data from the request body
+
     const { username, password } = req.body
     // search for the user
     User.findOne({ username })
