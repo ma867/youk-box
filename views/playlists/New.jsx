@@ -18,11 +18,8 @@ class New extends React.Component{
                                         <h5 className="card-title fw-bold mt-3">Playlist Details</h5>
                                             <form action="/playlists" method='POST'>
                                                 Title: <input className="line mb-3" type="text" name="title" placeholder='Title Goes Here'/><br />
-                                                Author: <input className="line mb-3" type="text" name="author" placeholder='Your Awesome Name Goes Here' /><br />
                                                 Description: <input className="line mb-3" type="text" name="description" placeholder='Your Vibes for This Playlist Go Here' /><br />
                                                
-
-
                                                 Songs: <br />
                                                 {
                                                     songs.map((song) => {

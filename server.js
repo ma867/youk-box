@@ -1,15 +1,13 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
-const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const jsxViewEngine = require('jsx-view-engine')
 const db = require('./models/db')
-const Song = require('./models/song')
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const getToken = require('./getToken')
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+const PORT = process.env.PORT || 8000
 
 
 
@@ -53,13 +51,8 @@ app.use('/search', require('./controllers/spotifyApiController'))
 
 // app.get('/', (req,res)=>{
 //     res.send("YERRRRR IT'S WORKING")
-// })x
+// })
 
-
-
-const PORT = process.env.PORT || 8000
-
-// at the bottom
 app.listen(PORT, () => {
   console.log('yerrrr its running', PORT)
 })

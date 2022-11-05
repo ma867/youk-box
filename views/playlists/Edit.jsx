@@ -3,7 +3,7 @@ const Default = require('../layouts/Default')
 
 class Edit extends React.Component{
     render(){
-        const {title, author, description, songs, _id, username} = this.props.playlist
+        const {title, description, songs, _id, username} = this.props.playlist
         const librarySongs = this.props.songs
         let ids = []
         return(
@@ -19,7 +19,6 @@ class Edit extends React.Component{
                                         <h5 className="card-title fw-bold mt-3">Playlist Details</h5>
                                             <form action={`/playlists/${_id}?overrideMethod=PUT`} method='POST'>
                                                 Title: <input className="line mb-3" type="text" name="title"  defaultValue={title}/><br />
-                                                Author: <input className="line mb-3" type="text" name="author" defaultValue={author}/><br />
                                                 Description: <input className="line mb-3" type="text" name="description" defaultValue={description}/><br />
                                                 Songs: <br />
 
@@ -67,7 +66,7 @@ class Edit extends React.Component{
                                                                     <div className='container'>
                                                                         <div className='row'>
                                                                             <div className='col-1'>
-                                                                                <input type="checkbox" id="songs[]" name="songs[]" value={`${id}`}/>  {title}<br></br>
+                                                                                <input type="checkbox" id="songs[]" name="songs[]" value={`${id}`}/>
                                                                         </div>
                                                                         <div className='col-2'>
                                                                             <img  src={artwork} style={{width:'60px',height:'60px'}} alt="" />  

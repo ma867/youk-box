@@ -17,14 +17,13 @@ class Index extends React.Component{
                             
                         {
                             playlists.map((playlist) => {
-                                const {title, author, description, songs, _id} = playlist
+                                const {title, description, songs, _id} = playlist
                                 return(
                                     <div className="col-sm-3 mb-3">
                                         <div className="card shadow-sm border-0 rounded-0" >
                                             {/* <img className="card-img-top rounded-0" src={artwork} alt="Card image" style={{width:'100%'}}/> */}
                                             <div className="card-body">
                                                 <h5 className="card-title fw-bold"><a href={`/playlists/${_id}`}>{title}</a></h5>
-                                                <p className = "card-text">Created with love by: {author}</p>
                                                 <p className="card-text"><span className="fw-bold">Description: </span>{description}</p>
                                                 <p className="card-text"><span className="fw-bold">Songs: </span>{songs.length}</p>
                                                  <form method='POST' action={`/playlists/${_id}?overrideMethod=DELETE`}>

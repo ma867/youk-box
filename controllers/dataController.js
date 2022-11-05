@@ -1,11 +1,9 @@
 const Playlist = require('../models/playlist')
-const { db } = require('../models/song')
 const Song = require('../models/song')
 
 
 const dataController = {
 
-    //Index
     songIndex (req, res, next){
         Song.find({username: req.session.username}, (err, foundSongs) => {
             if(err){
@@ -21,7 +19,6 @@ const dataController = {
         })
     },
 
-    //Delete
     songDelete(req,res, next){
         Song.findByIdAndDelete(req.params.id, (err, deletedSong) => {
             if(err){
@@ -77,8 +74,6 @@ const dataController = {
         })
     },
 
-    //PLAYLIST
-
     playlistIndex (req, res, next){
         Playlist.find({}, (err, foundPlaylists) => {
             if(err){
@@ -86,18 +81,14 @@ const dataController = {
                 res.status(400).send(err)
             }
             else{
-                // res.send({songs:foundSongs })
                 res.locals.data.playlists = foundPlaylists
                 console.log(res.locals.data.playlists)
-                // console.log(res.locals.data.playlists.songs)
-
                 next()
 
             }
         })
     },
 
-     //Delete
      playlistDelete(req,res, next){
         Playlist.findByIdAndDelete(req.params.id, (err, deletedPlaylist) => {
             if(err){
@@ -118,12 +109,10 @@ const dataController = {
                 }
                 else{
                     res.locals.data.playlist = foundPlaylist
-                    // console.log(foundPlaylist.songs)
                     next()
                 }
             })
     },
-    //3
     playlistUpdate(req,res, next){
         Playlist.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedPlaylist)=> {
             if(err){

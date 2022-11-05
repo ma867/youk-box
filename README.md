@@ -34,3 +34,19 @@ This application is my personal reiteration of streaming platforms like SoundClo
 ![wireframes](https://i.imgur.com/FZuxZOB.png)
 
 * **Development:** For the coding process, I divided my work into small technical tasks as you would in an agile system. First, dependencies and boiler plate code was written to ensure that express and any of the modules installed ran properly. Then, I focused on creating all the INDUCES routes and their respective JSX views for the songs route. Using that same format, applied the same changes to the playlists route. Lastly, I began implementing the  code for manipulating the DOM as well as adding CSS styling to make it more user friendly. This was an iterative step.
+
+
+
+
+
+
+### INDUCES Tables
+|Action| URL| HTTP Verb | JSX View Filename | mongoose method |
+| ----------- | -------------| --------------| -------------| --------------|
+| Index| /songs, /playlists | GET | Index.jsx | Song.find({}), Playlist.find({}) |
+| Show| /songs/:id, /playlists/:id | GET | Show.jsx | Song.findById(req.params.id), Playlist.findById(req.params.id)|
+| New | /songs/new, /playlists/new | GET | New.jsx | none |
+| Create | /songs, /playlists | POST | none | Song.create(req.body), Playlist.create(req.body)|
+| Edit | /songs/:id/edit, /playlists/:id/edit | GET | Edit.jsx | Song.findById(req.params.id), Playlist.findById(req.params.id) | 
+| Update| /songs/:id, /playlists/:id | PUT | none | Song.findByIdAndUpdate(req.params.id), Playlist.findByIdAndUpdate(req.params.id) |
+| Destroy| /songs/:id, /playlists/:id  | DELETE | none | Song.findByIdAndDelete(req.params.id), Playlist.findByIdAndDelete(req.params.id) |

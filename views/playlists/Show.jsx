@@ -3,7 +3,7 @@ const Default = require('../layouts/Default')
 
 class Show extends React.Component{
     render(){
-        const {title, author, description, songs, username} = this.props.playlist
+        const {title, description, songs, username} = this.props.playlist
 
         
       
@@ -21,7 +21,6 @@ class Show extends React.Component{
                                 <div className="col-md-8">
                                     <div className="card-block">
                                         <h1 className="card-title fw-bold mt-3">{title}</h1>
-                                        <h2 className = "card-text"><span className="fw-bold">Created with loved by:</span> {author}</h2>
                                         <h2 className="card-text"><span className="fw-bold">Description: </span>{description}</h2>
                                         <h2 className="card-text  fw-bold">Songs:</h2>
                                         <ul>
