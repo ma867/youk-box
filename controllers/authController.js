@@ -29,7 +29,7 @@ router.post('/signup', async (req, res) => {
 
 
 router.get('/login', (req, res) => {
-  res.render('user/LogIn.jsx')
+  res.render('user/Login.jsx')
 })
 
 router.post('/login', async (req, res) => {
