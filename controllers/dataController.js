@@ -7,7 +7,7 @@ const dataController = {
 
     //Index
     songIndex (req, res, next){
-        Song.find({}, (err, foundSongs) => {
+        Song.find({username: req.session.username}, (err, foundSongs) => {
             if(err){
                 console.error(err)
                 res.status(400).send(err)
@@ -50,6 +50,7 @@ const dataController = {
 
     songCreate(req, res, next){
         req.body.artwork === ''? req.body.artwork = "https://i.imgur.com/0FUT9eJ.png" : req.body.artwork = req.body.artwork
+        req.body.username = req.session.username
         Song.create(req.body, (err, createdSong) => {
             if(err){
                 console.error(err)
@@ -149,6 +150,7 @@ const dataController = {
             }
         })
     },
+
 
 }
 

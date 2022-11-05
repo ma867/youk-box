@@ -1,12 +1,24 @@
+/// ///////////////////////////////////////////
+// Import Dependencies
+/// ///////////////////////////////////////////
 const mongoose = require('mongoose')
 
+/// /////////////////////////////////////////////
+// Define Model
+/// /////////////////////////////////////////////
+// pull schema and model from mongoose
+const { Schema, model } = mongoose
 
-const userSchema = new mongoose.Schema({
+// make fruits schema
+const userSchema = new Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true }
 })
 
-const User = mongoose.model('User', userSchema)
+// make fruit model
+const User = model('User', userSchema)
 
-
+/// ////////////////////////////////////////////////
+// Export Model
+/// ////////////////////////////////////////////////
 module.exports = User

@@ -6,7 +6,7 @@ const songSchema = new mongoose.Schema({
     album: {type: String, required: true, default: "Unknown Album"},
     artwork: {type: String, default: 'https://i.imgur.com/0FUT9eJ.png'},
     audio: {type: String},
-    username: String
+    username: {type: String}
 })
 
 const Song = mongoose.model('Song', songSchema)

@@ -14,7 +14,7 @@ class Index extends React.Component{
 	                
                 {
                     songs.map((song) => {
-                        const {title, artist, album, artwork, _id} = song
+                        const {title, artist, album, artwork, _id, audio} = song
                         return(
                             <div className="col-sm-3 mb-3">
                                 
@@ -24,7 +24,7 @@ class Index extends React.Component{
                                     <div className="album-wrapper">
                                         <img className="card-img-top rounded-0" src={artwork} alt="Card image" style={{width:'100%'}}/>
                                         <div className="audio-wrapper">
-                                            <audio src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3" controls></audio>
+                                            <audio src={audio} controls></audio>
                                         </div>
                                     </div>
 

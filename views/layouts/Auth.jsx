@@ -1,9 +1,9 @@
 const React = require('react')
 
 
-class Default extends React.Component {
+class Auth extends React.Component {
   render () {
-    const { title, bannerTitleLight, bannerTitleSolid, endpoint, btnName, user } = this.props
+    const { title, user } = this.props
     let status = ''
     user === ''?  status = 'login': status='logout'
     return (
@@ -24,48 +24,12 @@ class Default extends React.Component {
               <title>{title}</title>
         </head>
         <body>
-        <nav className="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
-            <div className="container">
-                <a className="navbar-brand" href="/"><img style={{width:'200px'}} src="https://i.imgur.com/gGmlYWA.png" alt="you-kbox"/></a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <div className="mx-auto"></div>
-                    <ul className="navbar-nav">
-                    <li class="nav-item">
-                        <div id="search-btn" ><div class="nav-link text-white">Search</div></div>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link text-white" href="/songs">Songs</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link text-white" href="/playlists">Playlists</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link text-white" href={`/user/${status}`}>Log out</a>
-                        </li>
-                        <form className="form-inline my-2 my-lg-0" action="/search" method='POST' id= "search-form">
-								<input className="form-control search border-0 rounded-0 mr-sm-2" style={{background:"rgba(255,255,255,0.3)"}} type="text" name="artist" placeholder="Artist"/>
-								<input className="form-control search border-0 rounded-0 mr-sm-2" style={{background:"rgba(255,255,255,0.3)"}} type="text" name="song" placeholder="Song" />
-								<button className="btn btn-outline-0 my-2 my-sm-0 text-white" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-						</form>
-                        
-                    </ul>        
-                </div>
-            </div>
-        </nav>
-        <div className="banner-image w-100 d-flex justify-content-center align-items-center" style={{height: '300px'}}>
-            <div className="section-header text-center">
-                <h2 className="fw-bold display-1 text-white"><span className="b-class-secondary">{bannerTitleLight}</span> {bannerTitleSolid}</h2><br />
-                <h5><a className="text-center add text-white justify-content-center" href={`/${endpoint}/new`} style={{width:"60%"}}>Add {btnName} to library</a></h5>
+  
 
-            </div>
 
-        </div>
           {this.props.children}
           <footer className="text-light">
-    <div className="container">
+      <div className="container">
         <div className="row">
             <div className="col-md-3 col-lg-4 col-xl-3">
                 <h5 className="fw-bold">About Us</h5>
@@ -129,4 +93,4 @@ class Default extends React.Component {
   }
 }
 
-module.exports = Default
+module.exports = Auth

@@ -23,6 +23,56 @@ body{
   }
 
 
+
+.login {
+  min-height: 100vh;
+}
+
+
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+	background-color: #1f194c;
+}
+
+
+.form-control{
+	border-bottom: 1px solid #575a7b!important;
+  background:rgba(255,255,255,0.3)!important;
+	
+}
+
+#search-btn{
+	cursor:pointer;
+}
+#search-form{
+	max-width:0;
+	overflow:hidden;
+	transition: .4s ease-in-out;
+	display:grid;
+	grid-template-columns: repeat(3,auto);
+	
+}
+#search-form.show{
+	max-width:2000px;
+}
+
+
+.form-control::placeholder {
+  color: white;
+}
+
+
+
+
+
+
   .album-wrapper{
     position: relative;
     display:flex;

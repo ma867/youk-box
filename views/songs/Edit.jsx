@@ -3,7 +3,7 @@ const Default = require('../layouts/Default')
 
 class Edit extends React.Component{
     render(){
-        const {title, artist, album, artwork, _id, username} = this.props.song
+        const {title, artist, album, artwork, _id, username, audio} = this.props.song
         return(
             <Default title="edit paige" bannerTitleLight="Edit " bannerTitleSolid="Song" endpoint="songs" btnName="song" user={username}>
                 <div className="container mt-3 mb-3">
@@ -21,6 +21,7 @@ class Edit extends React.Component{
                                                 Artist: <input className="line mb-3" type="text" name="artist" defaultValue={artist}/><br />
                                                 Album: <input className="line mb-3" type="text" name="album" defaultValue={album}/><br />
                                                 Album Artwork: <input className="line mb-3" type="text" name="artwork" defaultValue={artwork}/><br />
+                                                Audio: <input className="line mb-3" type="text" name="audio" defaultValue={audio}/><br />
                                                 <input className="action" type="submit" value="Submit Song" />
                                             </form>  
                                     </div>

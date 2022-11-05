@@ -77,30 +77,6 @@ router.get('/logout', (req, res) => {
   })
 })
 
-/// ///////////////////////////////////////
-// Export the Router
-/// ///////////////////////////////////////
+
 module.exports = router
 
-// login
-// POST 
-// Sending data to the server (req.body)
-// sending a username & password 
-// Lookup the user in the db ---- Mongoose Method .findOne({ username: req.body.username })
-// compare the req.body.password or credentials to the pass/cred of the foundUser
-// if they match
-// ---authenticate the user
-
-// signup
-// POST
-// sending a username & password ...more data
-
-// login View Route
-// GET
-
-// signup view route
-// GET
-
-
-// logout
-// GET

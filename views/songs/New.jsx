@@ -20,6 +20,8 @@ class New extends React.Component{
                                                 Artist: <input className="line mb-3" type="text" name="artist" placeholder  ='Artist(s) Name Goes Here'/><br />
                                                 Album: <input className="line mb-3" type="text" name="album" placeholder='Album Name Goes Here'/><br />
                                                 Album Artwork: <input className="line mb-3" type="text" name="artwork" placeholder='URL for Album Art Goes Here'/><br />
+                                                Audio: <input className="line mb-3" type="text" name="audio" placeholder='URL for MP3 Goes Here'/><br />
+
                                                 <input className="action" type="submit" value="Submit Song" />
                                             </form>  
                                     </div>

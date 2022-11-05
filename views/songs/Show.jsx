@@ -3,7 +3,7 @@ const Default = require('../layouts/Default')
 
 class Show extends React.Component{
     render(){
-        const {title, artist, album, artwork,_id, username } = this.props.song
+        const {title, artist, album, artwork,_id, username, audio } = this.props.song
         return(
             <>  
 
@@ -13,14 +13,22 @@ class Show extends React.Component{
                                           
                         <div className="card col-lg-6 p-3 border-0 rounded-0">
                             <div className="row ">
-                                <div className="col-md-4">
+                                {/* <div className="col-md-4">
                                     <img style={{width:"200px",innerHeight:"200px"}} src={artwork}/>
                                 </div>
+                                 */}
+
+                                <div className="album-wrapper col-md-4">
+                                        <img className="card-img-top rounded-0" src={artwork} alt="Card image" style={{width:"200px",innerHeight:"200px"}}/>
+                                        <div className="audio-wrapper">
+                                            <audio src={audio} controls></audio>
+                                        </div>
+                                    </div>
                                 <div className="col-md-8">
                                     <div className="card-block">
                                         <h1 className="card-title fw-bold mt-3">{title}</h1>
                                         <h2 className = "card-text  fw-bold">{album}</h2>
-                                        <h2 className="card-text  fw-bold"><span className="fw-bold">Artist: </span>{artist}</h2>
+                                        <h2 className="card-text"><span className="fw-bold">Artist: </span>{artist}</h2>
                                         <form method='POST' action={`/songs/${_id}?overrideMethod=DELETE`}>
                                             <input className="action text-center mb-1" type="submit" value="delete" />
                                         </form>
