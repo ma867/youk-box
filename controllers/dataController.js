@@ -75,7 +75,7 @@ const dataController = {
     },
 
     playlistIndex(req, res, next) {
-        Playlist.find({}, (err, foundPlaylists) => {
+        Playlist.find({username: req.session.username }, (err, foundPlaylists) => {
             if (err) {
                 console.error(err)
                 res.status(400).send(err)
