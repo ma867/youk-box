@@ -1,3 +1,5 @@
+require('dotenv').config()
+const btoa = require('btoa')
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const getToken = require('../getToken')
 const express = require('express')
