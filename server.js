@@ -14,28 +14,28 @@ const PORT = process.env.PORT || 8000
 
 const app = express()
 
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
 
-app.use((req,res, next) => {
+app.use((req, res, next) => {
     res.locals.data = {}
     next()
 })
 
 
-app.engine('jsx', jsxViewEngine.createEngine() )
+app.engine('jsx', jsxViewEngine.createEngine())
 app.set('view engine', 'jsx')
-db.once('open', ()=>{
+db.once('open', () => {
     console.log('connected to MongoDB Babygurrrlll')
 })
 
 app.use(
     session({
-      secret: process.env.SECRET,
-      store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-      saveUninitialized: true,
-      resave: false,
+        secret: process.env.SECRET,
+        store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+        saveUninitialized: true,
+        resave: false,
     })
-  )
+)
 
 app.use(methodOverride('overrideMethod'))
 app.use(express.static('public'))
@@ -54,6 +54,6 @@ app.use('/search', require('./controllers/spotifyApiController'))
 // })
 
 app.listen(PORT, () => {
-  console.log('yerrrr its running', PORT)
+    console.log('yerrrr its running', PORT)
 })
 

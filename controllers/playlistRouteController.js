@@ -6,12 +6,12 @@ const viewController = require('./viewController')
 
 
 router.use((req, res, next) => {
-    if (req.session.loggedIn) {
-      next()
-    } else {
-      res.redirect("/user/login")
-    }
-  })
+  if (req.session.loggedIn) {
+    next()
+  } else {
+    res.redirect("/user/login")
+  }
+})
 
 router.get('/', dataController.playlistIndex, viewController.playlistIndex)
 

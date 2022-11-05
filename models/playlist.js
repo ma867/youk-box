@@ -2,10 +2,11 @@ const mongoose = require('mongoose')
 
 
 const playlistSchema = new mongoose.Schema({
-    title: {type: String, required: true},
-    description: {type: String, default: "Just an awesome playlist by an equally awesome person"},
-    songs: [{type: mongoose.Schema.Types.ObjectId, ref: "Song"}],
-    username: {type: String}
+    title: { type: String, required: true },
+    description: { type: String, default: "Just an awesome playlist by an equally awesome person" },
+    artwork: { type: String, default: 'https://i.imgur.com/0FUT9eJ.png' },
+    songs: [{ type: mongoose.Schema.Types.ObjectId, ref: "Song" }],
+    username: { type: String }
 
 })
 

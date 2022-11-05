@@ -4,13 +4,13 @@ const dataController = require('./dataController')
 const viewController = require('./viewController')
 
 router.use((req, res, next) => {
-    if (req.session.loggedIn) {
-      next()
-    } else {
-      res.redirect("/user/login")
-    }
-  })
-  
+  if (req.session.loggedIn) {
+    next()
+  } else {
+    res.redirect("/user/login")
+  }
+})
+
 router.get('/', dataController.songIndex, viewController.songIndex)
 
 router.get('/new', viewController.songNew)

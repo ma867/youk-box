@@ -10,21 +10,21 @@ router.get('/signup', (req, res) => {
 })
 
 router.post('/signup', async (req, res) => {
-    req.body.password = await bcrypt.hash(
-      req.body.password,
-      await bcrypt.genSalt(10)
-    )
+  req.body.password = await bcrypt.hash(
+    req.body.password,
+    await bcrypt.genSalt(10)
+  )
 
-    User.create(req.body)
-      .then((user) => {
- 
-        res.redirect('/user/login')
-      })
-      .catch((error) => {
-        console.log(error)
-        res.json({ error })
-      })
-  })
+  User.create(req.body)
+    .then((user) => {
+
+      res.redirect('/user/login')
+    })
+    .catch((error) => {
+      console.log(error)
+      res.json({ error })
+    })
+})
 
 
 
@@ -34,31 +34,31 @@ router.get('/login', (req, res) => {
 
 router.post('/login', async (req, res) => {
 
-    const { username, password } = req.body
-   
-    User.findOne({ username })
-      .then(async (user) => {
-        if (user) {
-          const result = await bcrypt.compare(password, user.password)
-          if (result) {
-        
-            req.session.username = username
-            req.session.loggedIn = true
-         
-            res.redirect('/songs')
-          } else {
-            
-            res.json({ error: "password doesn't match" })
-          }
+  const { username, password } = req.body
+
+  User.findOne({ username })
+    .then(async (user) => {
+      if (user) {
+        const result = await bcrypt.compare(password, user.password)
+        if (result) {
+
+          req.session.username = username
+          req.session.loggedIn = true
+
+          res.redirect('/songs')
         } else {
-          res.redirect('/user/signup')
+
+          res.json({ error: "password doesn't match" })
         }
-      })
-      .catch((error) => {
-        console.log(error)
-        res.json({ error })
-      })
-  })
+      } else {
+        res.redirect('/user/signup')
+      }
+    })
+    .catch((error) => {
+      console.log(error)
+      res.json({ error })
+    })
+})
 
 router.get('/logout', (req, res) => {
   req.session.destroy((err) => {
@@ -67,7 +67,7 @@ router.get('/logout', (req, res) => {
       res.status(500).json(err)
     } else {
       res.redirect('/')
-    }    
+    }
   })
 })
 
