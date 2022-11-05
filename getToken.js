@@ -3,8 +3,8 @@ require('dotenv').config()
 const btoa = require('btoa')
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args))
 
-const CLIENT_ID = 'ff6ecca143914ee88b50a6d60b671d17'
-const CLIENT_SECRET = '82f69952f8734a8c8d8ae970cb56bbbe'
+const CLIENT_ID = process.env.CLIENT_ID
+const CLIENT_SECRET = process.env.CLIENT_SECRET
 
 
 const getToken = async (req, res, next) => {

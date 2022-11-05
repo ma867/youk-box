@@ -26,7 +26,7 @@ class Default extends React.Component {
         <body>
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
             <div className="container">
-                <a className="navbar-brand" href="/"><img style={{width:'200px'}} src="https://i.imgur.com/gGmlYWA.png" alt="you-kbox"/></a>
+                <a className="navbar-brand" href="#"><img style={{width:'200px'}} src="https://i.imgur.com/gGmlYWA.png" alt="you-kbox"/></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
